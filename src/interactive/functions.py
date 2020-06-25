@@ -23,8 +23,8 @@ def load_data(dataset, opt):
         data_loader = load_conceptnet_data(opt)
 
     # Initialize TextEncoder
-    encoder_path = "model/encoder_bpe_40000.json"
-    bpe_path = "model/vocab_40000.bpe"
+    encoder_path = "comet_commonsense/model/encoder_bpe_40000.json"
+    bpe_path = "comet_commonsense/model/vocab_40000.bpe"
     text_encoder = TextEncoder(encoder_path, bpe_path)
     text_encoder.encoder = data_loader.vocab_encoder
     text_encoder.decoder = data_loader.vocab_decoder
@@ -39,7 +39,7 @@ def load_atomic_data(opt):
         opt.data.maxe1 = 17
         opt.data.maxe2 = 35
         opt.data.maxr = 1
-    path = "data/atomic/processed/generation/{}.pickle".format(
+    path = "comet_commonsense/data/atomic/processed/generation/{}.pickle".format(
         utils.make_name_string(opt.data))
     data_loader = data.make_data_loader(opt, opt.data.categories)
     loaded = data_loader.load_data(path)
@@ -55,7 +55,7 @@ def load_conceptnet_data(opt):
             opt.data.maxr = 5
         else:
             opt.data.maxr = 1
-    path = "data/conceptnet/processed/generation/{}.pickle".format(
+    path = "comet_commonsense/data/conceptnet/processed/generation/{}.pickle".format(
     utils.make_name_string(opt.data))
     data_loader = data.make_data_loader(opt)
     loaded = data_loader.load_data(path)
@@ -124,7 +124,7 @@ def get_atomic_sequence(input_event, model, sampler, data_loader, text_encoder, 
 
         sequence_all['beams'] = sampling_result["beams"]
 
-        print_atomic_sequence(sequence_all)
+        # print_atomic_sequence(sequence_all)
 
         return {category: sequence_all}
 
@@ -202,7 +202,7 @@ def get_conceptnet_sequence(e1, model, sampler, data_loader, text_encoder, relat
 
         sequence_all['beams'] = sampling_result["beams"]
 
-        print_conceptnet_sequence(sequence_all)
+        # print_conceptnet_sequence(sequence_all)
 
         return {relation: sequence_all}
 

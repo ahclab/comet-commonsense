@@ -1,0 +1,75 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+
+# pycache
+__pycache__
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# data directory
+data*/
+
+# log directory
+log*/
+
+# tmp directory
+tmp*/
+
+# trained model log directory
+model_log*/
+
+# inference log directory
+inf_log*/
+
+# evaluation log directory
+auto*/
+human*/
+comp*/
+csv*/
+
+# human-system chat log directory
+chat*/
+
+# GloVe
+GloVe*/
+
+# BK directory
+*BK*/
+
+# REDIAL
+redial/
+
+# COMET
+pretrained_models/
+model/

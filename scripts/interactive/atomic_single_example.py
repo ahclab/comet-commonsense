@@ -4,6 +4,7 @@ import argparse
 import torch
 
 sys.path.append(os.getcwd())
+sys.path.append(os.path.join(os.path.dirname(__file__), "../.."))
 
 import src.data.data as data
 import src.data.config as cfg
